@@ -71,6 +71,17 @@ CREATE INDEX IF NOT EXISTS idx_inquiries_customer_email ON inquiries (customer_e
 CREATE INDEX IF NOT EXISTS idx_inquiries_created_at   ON inquiries (created_at DESC);
 
 -- ---------------------------------------------------------------------------
+-- admin_users
+-- ---------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS admin_users (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  username       TEXT    NOT NULL UNIQUE,
+  password_hash  TEXT    NOT NULL,   -- PBKDF2-SHA256 hex digest (see lib/auth.ts)
+  password_salt  TEXT    NOT NULL,   -- hex salt
+  created_at     TEXT    NOT NULL DEFAULT (datetime('now'))
+);
+
+-- ---------------------------------------------------------------------------
 -- admin_sessions
 -- ---------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS admin_sessions (
