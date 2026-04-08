@@ -1,0 +1,52 @@
+name = "prince-photography"
+main = ".open-next/worker.js"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "prince-database"
+database_id = "9bf0ec2c-1e44-4786-b306-16049ed85ede"
+
+[vars]
+RESEND_API_KEY = ""
+JWT_SECRET = ""
+TURNSTILE_SECRET_KEY = ""
+CLOUDINARY_CLOUD_NAME = "djlfrgkkv"
+CLOUDINARY_API_KEY = "984356814443271"
+# CLOUDINARY_API_SECRET — add via: wrangler secret put CLOUDINARY_API_SECRET
+
+[env.production]
+name = "prince-photography"
+
+[env.production.vars]
+RESEND_API_KEY = ""
+JWT_SECRET = ""
+TURNSTILE_SECRET_KEY = ""
+CLOUDINARY_CLOUD_NAME = "djlfrgkkv"
+CLOUDINARY_API_KEY = "984356814443271"
+# CLOUDINARY_API_SECRET — add via: wrangler secret put CLOUDINARY_API_SECRET
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "prince-database"
+database_id = "9bf0ec2c-1e44-4786-b306-16049ed85ede"
+
+[env.preview]
+name = "prince-photography-preview"
+
+[env.preview.vars]
+RESEND_API_KEY = ""
+JWT_SECRET = ""
+TURNSTILE_SECRET_KEY = ""
+CLOUDINARY_CLOUD_NAME = "djlfrgkkv"
+CLOUDINARY_API_KEY = "984356814443271"
+# CLOUDINARY_API_SECRET — add via: wrangler secret put CLOUDINARY_API_SECRET
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "prince-database"
+database_id = "9bf0ec2c-1e44-4786-b306-16049ed85ede"
